@@ -15,23 +15,26 @@
 
 <%= render 'shared/flash_messages' unless flash.empty? %>
 
-<div class="background">
-  <div class="container pt-9 pb-8">
+<div class="background-blue height-100">
+  <div class="container v-center">
     <div class="row">
       <div class="col-md-12 col-sm-12 text-center">
-        <h1 id="main-text" class="display-4 mb-4"> <%= t("landing.welcome").html_safe %></h1>
-        <p class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about", href: link_to(t("greenlight"), "https://bigbluebutton.org/2018/07/09/greenlight-2-0/", target: "_blank")).html_safe %></p>
-        <%= link_to "https://youtu.be/Hso8yLzkqj8", target: "_blank" do %>
-          <h4><%= t("landing.video") %> <i class="far fa-play-circle ml-1"></i></h4>
-        <% end %>
+        <h1 id="main-text" class="display-4 mb-4 title">
+          Bienvenidos al Servidor de Conferencias<br>
+          <strong>Academia Politécnica la Trinidad</strong>
+        </h1>
+        <hr class="white-border">
       </div>
-
+      <div class="col-md-6">
+        <h2 class="text-center white"><i class="far fa-life-ring"></i>
+          <%= mail_to(Rails.configuration.support_email, "Soporte", class: "text-center white-link") %>
+        </h2>
+      </div>
+      <div class="col-md-6">
+        <h2 class="text-center white"><i class="fas fa-file-pdf"></i>
+          <%= link_to("Documentación", Rails.configuration.documentation_url, target: "_blank", class: "text-center white-link") %>
+        </h2>
+      </div>
     </div>
   </div>
 </div>
-<%
-=begin%>
-<%= render "shared/features" %>
-  
-<%
-=end%>

@@ -81,6 +81,12 @@ module Greenlight
     # Configure custom branding image.
     config.branding_image = ENV['BRANDING_IMAGE'] || "https://raw.githubusercontent.com/bigbluebutton/greenlight/master/app/assets/images/logo_with_text.png"
 
+    # Email Support
+    config.support_email = ENV['SUPPORT_EMAIL'] || "presencial@palt.es"
+
+    # Url To Documentation
+    config.documentation_url = ENV['DOCUMENTATION_URL']
+
     # Show/Hide cutomization tab in user settings
     config.allow_custom_branding = (ENV['ALLOW_CUSTOM_BRANDING'] == "true")
 
